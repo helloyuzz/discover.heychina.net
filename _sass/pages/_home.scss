@@ -50,7 +50,8 @@
       .card-title {
         @extend %text-clip;
 
-        color: var(--heading-color) !important;
+        // color: var(--heading-color) !important;
+        color: #5357b6 !important;
         font-size: 1.25rem;
       }
 
@@ -62,15 +63,15 @@
         @include bp.md {
           display: inherit !important;
         }
-
         &.content {
           @extend %muted;
-
+          
           p {
             @extend %text-clip;
-
+            
             line-height: 1.5;
             margin: 0;
+            font-size: 0.8 rem !important;
           }
         }
       }
