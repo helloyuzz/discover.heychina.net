@@ -46,12 +46,20 @@
 
     <div id="topbar-title">
       {% if page.layout == 'home' %}
-        {{- site.data.locales[include.lang].title | default: site.title -}}
+       <a href="/"> {{- site.data.locales[include.lang].title | default: site.title -}}</a>
+      {% elsif page.url contains '/about' %}
+            {{- site.data.locales[include.lang].tabs[tab_key] | default: page.title -}}
       {% elsif page.collection == 'tabs' or page.layout == 'page' %}
         {%- capture tab_key -%}{{ page.url | split: '/' }}{%- endcapture -%}
-        {{- site.data.locales[include.lang].tabs[tab_key] | default: page.title -}}
+       <a href="/"> {{- site.data.locales[include.lang].tabs[tab_key] | default: page.title -}}</a>
+      {% elsif page.url contains '/categories' %}
+        <a href="/categories/">{{ site.title }}</a>
+      {% elsif page.url contains '/tags' %}
+        <a href="/tags/">{{ site.title }}</a>
       {% else %}
-       <a href="{{ page.tophref }}"> {{- site.data.locales[include.lang].layout[page.layout] | default: page.layout | capitalize -}}</a>
+        <a href="/">{{ site.title }}</a>
+      {% endif %}
+       <!-- {{- site.data.locales[include.lang].layout[page.layout] | default: page.layout | capitalize -}} -->
       {% endif %}
     </div>
 
