@@ -175,6 +175,11 @@ collections:
     output: true
     sort_by: order
 
+annotations:
+  tabs:
+    output: true
+    sort_by: order
+
 defaults:
   - scope:
       path: "" # An empty string here means all files in the project
@@ -221,10 +226,12 @@ exclude:
   - "package*.json"
 
 jekyll-archives:
-  enabled: [categories, tags]
+  enabled: [categories, tags, annotations]
   layouts:
     category: category
     tag: tag
+    annotation: annotation
   permalinks:
     tag: /tags/:name/
     category: /categories/:name/
+    annotations: /annotations/:name/

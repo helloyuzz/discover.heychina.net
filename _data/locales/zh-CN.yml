@@ -15,6 +15,7 @@ tabs:
   tags: 标签
   archives: 归档
   about: 关于
+  annotation: 作注
 
 # the text displayed in the search bar & search results
 search:
@@ -80,4 +81,10 @@ df:
 # categories page
 categories:
   category_measure: 个分类
+  post_measure: 篇文章
+
+
+#annotations page
+annotations:
+  annotation_measure: 个批注
   post_measure: 篇文章
